@@ -1842,8 +1842,12 @@ function printTicket(ticket) {
   const totalPointVal = ticket.amount || 0;
   const totalQtyVal = ticket.qty || Math.round(totalPointVal / 2);
 
-  // Group bet lines into rows of 3 pairs (Num/Qty)
-  const betLines = ticket.bet_lines || [];
+  // Group bet lines into rows of 3 pairs (Num/Qty) sorted in ascending numeric order
+  const betLines = [...(ticket.bet_lines || [])].sort((a, b) => {
+    const numA = parseInt(a.num);
+    const numB = parseInt(b.num);
+    return (isNaN(numA) ? 0 : numA) - (isNaN(numB) ? 0 : numB);
+  });
   let tableRowsHtml = '';
   for (let i = 0; i < betLines.length; i += 3) {
     const b1 = betLines[i] || { num: '', qty: '' };
