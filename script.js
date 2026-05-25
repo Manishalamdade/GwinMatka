@@ -1632,10 +1632,10 @@ async function loadCurrentDrawHistory() {
 
         tr.innerHTML = `
           <td>${barcode}</td>
-          
+          <td>${ticketId || "N/A"}</td>
           <td style="color: var(--gold-light);">${ticket.amount || 0}</td>
-          <td>${ticket.draw_times || "N/A"}</td>
-          <td>${ticket.bet_time || "N/A"}</td>
+          <td>${ticket.draw_time || ticket.draw_times || "N/A"}</td>
+          <td>${ticket.bet_time || ticket.tck_time || "N/A"}</td>
           <td>
             <button class="action-submit-btn inline-cancel-btn" data-ticket-id="${ticketId}" data-barcode="${barcode}" style="padding: 3px 10px; font-size: 12px; margin: 0; background: linear-gradient(180deg, #d32f2f 0%, #8b0000 100%);">CANCEL</button>
           </td>
