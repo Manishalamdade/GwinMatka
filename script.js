@@ -1836,8 +1836,8 @@ function printTicket(ticket) {
   };
 
   const gameDateVal = ticket.recordDate || new Date().toISOString().split('T')[0];
-  const drawTimeVal = ticket.draw_times || 'N/A';
-  const ticketTimeVal = convertTo24Hour(ticket.bet_time);
+  const drawTimeVal = ticket.draw_time || ticket.draw_times || 'N/A';
+  const ticketTimeVal = convertTo24Hour(ticket.tck_time || ticket.bet_time);
   const retailerIdVal = userData.user || 'anil';
   const totalPointVal = ticket.amount || 0;
   const totalQtyVal = ticket.qty || Math.round(totalPointVal / 2);
