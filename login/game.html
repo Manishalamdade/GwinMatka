@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATKA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <div class="game-container">
+
+    <!-- HEADER -->
+    <div class="top-bar">
+      <div class="top-left">
+        <div class="id-item">ID: 18421489</div>
+        <div class="id-item">P ID: 180662828</div>
+      </div>
+      <div class="top-flare"></div>
+      <img src="../Assets/img/Matka-Logo.png" alt="MATKA" class="matka-logo">
+      <div class="top-right">
+        <div class="limit-bar" id="limitBar">Akda Min : 5 Max : 10000</div>
+        <div class="info-btn">i</div>
+        <div class="user-badge">
+          <div class="user-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 16.66 14.67 14 12 14Z" />
+            </svg>
+          </div>
+          <span>FUN003008006</span>
+        </div>
+        <button class="close-btn">✕</button>
+      </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="main-layout">
+
+      <!-- LEFT COLUMN (1-5) -->
+      <div class="grid-column">
+        <div class="grid-content-wrapper">
+          <div class="header-boxes" id="headerLeft">
+            <div class="header-box" data-num="1"><span class="h-num">1</span><span class="h-bet"></span></div>
+            <div class="header-box" data-num="2"><span class="h-num">2</span><span class="h-bet"></span></div>
+            <div class="header-box" data-num="3"><span class="h-num">3</span><span class="h-bet"></span></div>
+            <div class="header-box" data-num="4"><span class="h-num">4</span><span class="h-bet"></span></div>
+            <div class="header-box" data-num="5"><span class="h-num">5</span><span class="h-bet"></span></div>
+          </div>
+          <div class="pana-grid-container" id="leftGrid"></div>
+          <div class="bottom-stats-bar">
+            <div class="stat-box">
+              <div class="stat-val" id="balanceVal">21446</div>
+              <div class="stat-label">BALANCE</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val" id="totalBetVal">0</div>
+              <div class="stat-label">TOTAL BET</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val" id="winningVal">0</div>
+              <div class="stat-label">WINNING</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- CENTER PANEL -->
+      <div class="center-panel">
+        <div class="timer-circle">
+          <span id="timerDisplay">01:19</span>
+        </div>
+
+        <!-- CHAKRI CANVAS — no spin button -->
+        <div class="wheel-area">
+          <canvas id="chakriCanvas" width="320" height="320"></canvas>
+          <!-- Corner Ornaments -->
+          <img src="../Assets/leftdesign.png" class="ornament side-ornament top-left" alt="decor">
+          <img src="../Assets/leftdesign.png" class="ornament side-ornament top-right" alt="decor">
+
+
+          <!-- Bottom Major Scroll -->
+          <img src="../Assets/Lowerdesign.png" class="ornament main-lower-design" alt="decor">
+        </div>
+
+        <div class="result-box">
+          <div class="result-strip" id="resultStrip">789 145 577 160 139 490 256 238 145 128</div>
+        </div>
+
+        <div class="disclaimer-box">For Amusement Only.</div>
+
+        <div class="chip-selection">
+          <div class="chip-row-upper" id="chipRowUpper"></div>
+          <div class="chip-row-lower" id="chipRowLower"></div>
+        </div>
+      </div>
+
+
+      <div class="grid-column right-grid-column">
+        <div class="grid-content-wrapper">
+          <div class="side-aligned-row header-row-aligned">
+            <div class="header-boxes" id="headerRight">
+              <div class="header-box" data-num="6"><span class="h-num">6</span><span class="h-bet"></span></div>
+              <div class="header-box" data-num="7"><span class="h-num">7</span><span class="h-bet"></span></div>
+              <div class="header-box" data-num="8"><span class="h-num">8</span><span class="h-bet"></span></div>
+              <div class="header-box" data-num="9"><span class="h-num">9</span><span class="h-bet"></span></div>
+              <div class="header-box" data-num="0"><span class="h-num">0</span><span class="h-bet"></span></div>
+            </div>
+            <div class="side-box side-akda">
+              <div class="side-title">AKDA</div>
+              <div class="side-mult">X9</div>
+            </div>
+          </div>
+
+          <div class="side-aligned-row grid-row-aligned">
+            <div class="pana-grid-container" id="rightGrid"></div>
+            <div class="side-boxes-column">
+              <div class="side-box side-sp">
+                <img src="../Assets/img/sidebar.png" class="side-flower" alt="">
+                <img src="../Assets/img/sidebar.png" class="side-flower" alt="">
+                <div class="side-letters"><span>S</span><span>P</span></div>
+                <div class="side-mult">X150</div>
+                <img src="../Assets/img/sidebar.png" class="side-flower" alt="">
+                <img src="../Assets/img/sidebar.png" class="side-flower" alt="">
+              </div>
+              <div class="side-box side-dp">
+                <img src="../Assets/img/sidebar.png" class="side-flower" alt="">
+                <div class="side-letters"><span>D</span><span>P</span></div>
+                <div class="side-mult">X300</div>
+                <img src="../Assets/img/sidebar.png" class="side-flower" alt="">
+              </div>
+              <div class="side-box side-triple">
+                <div class="side-title">Triple</div>
+                <div class="side-mult">X1000</div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="action-footer">
+            <button class="action-btn prev-btn">PREV</button>
+            <button class="action-btn clear-btn">CLEAR</button>
+            <button class="action-btn double-btn">DOUBLE</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INFO OVERLAY MODAL -->
+    <div class="info-modal-overlay" id="infoModalOverlay">
+      <div class="info-modal-container">
+        <!-- Close Button -->
+        <button class="info-modal-close" id="infoModalClose">✕</button>
+
+        <!-- Top Navigation Tabs -->
+        <div class="info-modal-tabs">
+          <button class="info-tab-btn active" data-tab="tab-history">GAME HISTORY</button>
+          <button class="info-tab-btn" data-tab="tab-cancel">CANCEL TICKET</button>
+          <button class="info-tab-btn" data-tab="tab-net-pay">NET TO PAY</button>
+        </div>
+
+        <!-- Tab 1: Game History -->
+        <div class="info-tab-content active" id="tab-history">
+          <div class="filter-bar">
+            <span>FROM</span>
+            <input type="date" id="historyFromDate" class="date-input">
+            <span>TO</span>
+            <input type="date" id="historyToDate" class="date-input">
+            <button class="view-btn" id="btnHistoryView">VIEW</button>
+          </div>
+          <div class="table-container">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>TICKET ID</th>
+                  <th>GAME ID</th>
+                  <th>PLAYED</th>
+                  <th>WON</th>
+                  <th>END</th>
+                  <th>STATUS</th>
+                  <th>RESULT</th>
+                  <th>DRAW TIME</th>
+                  <th>TICKET TIME</th>
+                </tr>
+              </thead>
+              <tbody id="historyTableBody">
+                <!-- Rows populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button class="modal-footer-btn green-btn" id="btnHistoryRefresh">Refresh</button>
+            <div class="right-buttons">
+              <button class="modal-footer-btn green-btn" id="btnHistoryDetails">DETAILS</button>
+              <button class="modal-footer-btn green-btn" id="btnHistoryReprint">REPRINT</button>
+              <button class="modal-footer-btn green-btn" id="btnHistoryClaim">CLAIM</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Cancel Ticket -->
+        <div class="info-tab-content" id="tab-cancel">
+          <div class="cancel-form-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 20px;">
+            <div style="text-align: left;">
+              <h2 style="color: var(--gold-light); font-size: 22px; font-weight: 700; margin: 0; font-family: 'Oswald', sans-serif;">CANCEL TICKET</h2>
+              <p style="font-size: 13px; color: #ddd; margin: 2px 0 0 0; font-family: 'Oswald', sans-serif;">Select a ticket from the current draw history below or enter ID manually to cancel before draw starts.</p>
+            </div>
+            <div class="form-row" style="margin: 0; width: auto;">
+              <input type="text" id="cancelTicketIdInput" placeholder="ENTER TICKET ID" class="text-input" style="width: 180px; padding: 6px 10px; font-size: 14px;">
+              <button class="action-submit-btn" id="btnCancelTicketSubmit" style="padding: 6px 16px; font-size: 14px;">CANCEL</button>
+            </div>
+          </div>
+          <div id="cancelStatusMsg" class="status-msg" style="margin: 0 0 10px 0; text-align: center; min-height: auto;"></div>
+          
+          <div class="table-container" style="flex: 1; overflow-y: auto;">
+            <table class="history-table" id="cancelHistoryTable">
+              <thead>
+                <tr>
+                  <th>TICKET ID</th>
+             
+                  <th>PLAYED</th>
+                  <th>DRAW TIME</th>
+                  <th>TICKET TIME</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody id="cancelTableBody">
+                <!-- Rows populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer" style="margin-top: 10px; justify-content: flex-end;">
+            <button class="modal-footer-btn green-btn" id="btnCancelRefresh" style="padding: 6px 20px; font-size: 14px;">Refresh</button>
+          </div>
+        </div>
+
+        <!-- Tab 3: Net To Pay -->
+        <div class="info-tab-content" id="tab-net-pay">
+          <div class="filter-bar">
+            <span>FROM</span>
+            <input type="date" id="netFromDate" class="date-input">
+            <span>TO</span>
+            <input type="date" id="netToDate" class="date-input">
+            <button class="view-btn" id="btnNetView">VIEW</button>
+          </div>
+          <div class="net-summary-container">
+            <div class="net-summary-grid">
+              <div class="summary-card">
+                <div class="summary-label">TOTAL SALE</div>
+                <div class="summary-value" id="netTotalSale">0</div>
+              </div>
+              <div class="summary-card">
+                <div class="summary-label">TOTAL WIN</div>
+                <div class="summary-value" id="netTotalWin">0</div>
+              </div>
+              <div class="summary-card">
+                <div class="summary-label">TOTAL COMMISSION</div>
+                <div class="summary-value" id="netTotalCommission">0</div>
+              </div>
+              <div class="summary-card net-to-pay-card">
+                <div class="summary-label">NET TO PAY</div>
+                <div class="summary-value" id="netToPayValue">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../config.js"></script>
+  <script src="../api.js"></script>
+  <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - MATKA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login/login.css">
+</head>
+<body>
+
+  <div class="login-overlay">
+    <div class="login-card">
+      <img src="Assets/img/Matka-Logo.png" alt="MATKA" class="login-logo">
+      <h2>MEMBER LOGIN</h2>
+      
+      <div class="input-group">
+        <label>USERNAME</label>
+        <input type="text" id="username" placeholder="Enter username" autocomplete="off">
+      </div>
+      
+      <div class="input-group">
+        <label>PASSWORD</label>
+        <input type="password" id="password" placeholder="Enter password">
+      </div>
+      
+      <button id="loginBtn" class="login-submit-btn">SIGN IN</button>
+      
+      <div id="loginMsg" class="login-error"></div>
+      
+    </div>
+  </div>
+
+  <!-- Include parent API and Config scripts -->
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="login/login.js"></script>
+</body>
+</html>
